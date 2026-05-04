@@ -18,7 +18,7 @@ export default function Register() {
 
   const handleSubmit = async () => {
     try {
-      await axios.post("https://reset-passoword-frontend-vd2b.vercel.app/auth/register", form);
+      await axios.post("https://reset-passoword-backend.onrender.com/auth/register", form);
       alert("Registered Successfully");
       navigate("/login");
     } catch (err) {
