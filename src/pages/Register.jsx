@@ -1,5 +1,4 @@
 
-
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
@@ -19,7 +18,7 @@ export default function Register() {
 
   const handleSubmit = async () => {
     try {
-      await axios.post(`${process.env.REACT_APP_API_URL}/auth/register`, form);
+      await axios.post("https://reset-passoword-frontend-vd2b.vercel.app/auth/register", form);
       alert("Registered Successfully");
       navigate("/login");
     } catch (err) {
