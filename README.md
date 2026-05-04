@@ -1,70 +1,164 @@
-# Getting Started with Create React App
+# 🔐 Password Reset Flow App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A full-stack web application that allows users to **register, login, and securely reset their password via email verification**.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🚀 Features
 
-### `npm start`
+- 📝 User Registration (Name, Email, Password)
+- 🔐 User Login Authentication
+- 📧 Forgot Password (Email-based reset link)
+- 🔑 Secure Token Generation & Expiry
+- 🔄 Reset Password via Token
+- 🎨 Responsive UI using Bootstrap + Gradient Design
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🧩 Tech Stack
 
-### `npm test`
+### Frontend
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- React.js
+- Bootstrap
+- Axios
+- React Router DOM
 
-### `npm run build`
+### Backend
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Node.js
+- Express.js
+- MongoDB (Mongoose)
+- Nodemailer
+- bcrypt.js
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 📁 Project Structure
 
-### `npm run eject`
+```
+password-reset-app/
+│
+├── backend/
+│   ├── controllers/
+│   ├── routes/
+│   ├── models/
+│   ├── server.js
+│   └── .env
+│
+├── frontend/
+│   ├── src/
+│   │   ├── pages/
+│   │   ├── App.js
+│   │   └── index.js
+│   └── .env
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 🔄 Application Flow
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. User registers an account
+2. User logs in
+3. User clicks "Forgot Password"
+4. Enters email → receives reset link
+5. Clicks link → redirected to reset page
+6. Enters new password
+7. Password updated successfully
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
+## ⚙️ Environment Variables
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Backend (.env)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+MONGO_URI=your_mongodb_connection_string
+EMAIL=your_email@gmail.com
+PASSWORD=your_app_password
+PORT=5000
+```
 
-### Code Splitting
+### Frontend (.env)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```
+REACT_APP_API_URL=http://localhost:5000/api
+```
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## ▶️ Getting Started
 
-### Making a Progressive Web App
+### 1. Clone the repository
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```
+git clone https://github.com/your-username/password-reset-app.git
+```
 
-### Advanced Configuration
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### 2. Setup Backend
 
-### Deployment
+```
+cd backend
+npm install
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+---
 
-### `npm run build` fails to minify
+### 3. Setup Frontend
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```
+cd frontend
+npm install
+npm start
+```
+
+---
+
+## 📧 Email Configuration
+
+- Use **Gmail App Password**
+- Enable **2-Step Verification**
+- Generate App Password from Google Account
+
+---
+
+## 🧪 API Endpoints
+
+| Method | Endpoint                        | Description      |
+| ------ | ------------------------------- | ---------------- |
+| POST   | /api/auth/register              | Register user    |
+| POST   | /api/auth/login                 | Login user       |
+| POST   | /api/auth/forgot-password       | Send reset email |
+| POST   | /api/auth/reset-password/:token | Reset password   |
+
+---
+
+## ⚠️ Notes
+
+- Token expires after a fixed time (e.g., 15 minutes)
+- Passwords are hashed using bcrypt
+- Email sending handled via Nodemailer
+
+---
+
+## 🌐 Deployment
+
+- Frontend: Netlify / Vercel
+- Backend: Render
+
+---
+
+## 👩‍💻 Author
+
+Nancy
+
+---
+
+## ⭐ Acknowledgement
+
+This project was built as part of a full-stack development learning journey.
+
+---
